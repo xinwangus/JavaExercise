@@ -12,10 +12,8 @@ public class BuggyClockHands
 {
 	public static void main(String[] args) {
 		int a = getAngle(3, 40);
-		if (a >= 0) {
-			System.out.println("Angle at 3:40 is: " + a);
-			// Output: Angle at 3:40 is: 150
-		}
+		System.out.println("Angle at 3:40 is: " + a);
+		// Output: Angle at 3:40 is: 150
 	}
 
 	public static int getAngle(int hour,
