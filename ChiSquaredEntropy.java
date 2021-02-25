@@ -12,11 +12,15 @@ public class ChiSquaredEntropy
 			System.out.println("Wrong args!");
 			return;
 		}
+		// unlike C/C++, use new
 		int[] counts = new int[256];
 		int total = 0;
 		try {
+			// unlike C/C++, index 0 is the first arg
+			// unlike C/C++, use new
 			FileInputStream file = new FileInputStream(args[0]);
 			int c = file.read();
+			// -1 is eof
 			while (c != -1) {
 				counts[c]++;
 				total++;
@@ -25,6 +29,7 @@ public class ChiSquaredEntropy
 			file.close();
 		} catch (Exception e) {
 			System.out.println("Can not open file " + args[0]);
+			return;
 		}
 
 		if (total == 0) {
@@ -32,6 +37,7 @@ public class ChiSquaredEntropy
 			return;
 		}
 
+		// cast 
 		double exp = (double)total/256;
 		System.out.println("Total = " + total + 
 			" Expect = " + exp);
